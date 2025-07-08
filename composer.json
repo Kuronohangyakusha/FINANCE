@@ -1,0 +1,15 @@
+{
+    "name": "ciara/sprint",
+    "description": "projet de gestion financier",
+    "autoload": {
+        "psr-4": {
+            "Ciara\\Sprint\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ndeye"
+        }
+    ],
+    "require": {}
+}
