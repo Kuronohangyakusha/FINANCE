@@ -1,5 +1,5 @@
 <?php
-namespace Ciara2\Sprint2;
+namespace App\Core;
 
 
 abstract class AbstractEntity{

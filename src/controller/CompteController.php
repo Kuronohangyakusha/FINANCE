@@ -1,7 +1,8 @@
 <?php
-namespace Ciara3\Sprint3;
+namespace App\Controller;
 
-use Ciara2\Sprint2\AbstractController;
+use App\Core\AbstractController;
+use App\Core\Middlewares\Auth;
 class CompteController extends  AbstractController{
     
     public function index(){}
@@ -18,7 +19,13 @@ class CompteController extends  AbstractController{
 
     public function store(){
         echo 'hello';
-        $this->render('commande/compte.php');
+    public function __construct() {
+        // Vérifier l'authentification pour toutes les méthodes
+        if (!Auth::check()) {
     }
+        // Page de création de compte (dashboard)
+        $user = Auth::user();
+        $user = Auth::user();
+        $this->render('commande/compte.php', ['user' => $user]);
  
 }
