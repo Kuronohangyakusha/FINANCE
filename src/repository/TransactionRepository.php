@@ -6,7 +6,7 @@ use App\Entity\Compte;
 use App\Entity\Client;
 use App\Entity\TypeTransaction;
 use App\Entity\TypeCompte;
-use App\Core\AbstractRepository;
+use App\Core\abstract\AbstractRepository;
 use DateTime;
 
 class TransactionRepository extends AbstractRepository {

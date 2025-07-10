@@ -4,7 +4,7 @@ require_once __DIR__ . '/env.php';
 require_once __DIR__ . '/helpers.php';
 
 // Démarrage de la session
-use App\Core\Session;
+use  App\Core\abstract\Session;
 Session::getInstance();
 
 // Configuration des erreurs

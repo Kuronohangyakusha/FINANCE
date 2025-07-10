@@ -1,7 +1,8 @@
 <?php
-namespace App\Core\Middlewares;
+namespace App\Core\middlewares;
+ 
 
-use App\Core\Session;
+use App\Core\abstract\Session;
 
 class Auth {
     public static function check() {

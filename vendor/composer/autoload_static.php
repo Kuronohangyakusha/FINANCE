@@ -7,45 +7,84 @@ namespace Composer\Autoload;
 class ComposerStaticInit84ebe74b6392e6596573ed24efa12350
 {
     public static $prefixLengthsPsr4 = array (
-        'C' => 
+        'D' => 
         array (
-            'Ciara\\Sprint\\' => 13,
-            'Ciara4\\' => 7,
-            'Ciara3\\Sprint3\\' => 15,
-            'Ciara2\\Sprint2\\' => 15,
+            'Database\\' => 9,
+        ),
+        'A' => 
+        array (
+            'App\\Service\\' => 12,
+            'App\\Repository\\' => 15,
+            'App\\Entity\\' => 11,
+            'App\\Core\\Middlewares\\' => 21,
+            'App\\Core\\Abstract\\' => 18,
+            'App\\Core\\' => 9,
+            'App\\Controller\\' => 15,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Ciara\\Sprint\\' => 
+        'Database\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/config/database',
+        ),
+        'App\\Service\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/service',
+        ),
+        'App\\Repository\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/repository',
+        ),
+        'App\\Entity\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src/entity',
         ),
-        'Ciara4\\' => 
+        'App\\Core\\Middlewares\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/public',
+            0 => __DIR__ . '/../..' . '/app/core/middlewares',
         ),
-        'Ciara3\\Sprint3\\' => 
+        'App\\Core\\Abstract\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/core/abstract',
+        ),
+        'App\\Core\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/core',
+        ),
+        'App\\Controller\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src/controller',
-        ),
-        'Ciara2\\Sprint2\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/core/abstract',
         ),
     );
 
     public static $classMap = array (
-        'Ciara3\\Sprint3\\CompteController' => __DIR__ . '/../..' . '/src/controller/CompteController.php',
-        'Ciara3\\Sprint3\\SecurityController' => __DIR__ . '/../..' . '/src/controller/SecurityController.php',
-        'Ciara\\Sprint\\Client' => __DIR__ . '/../..' . '/src/entity/Client.php',
-        'Ciara\\Sprint\\Compte' => __DIR__ . '/../..' . '/src/entity/Compte.php',
-        'Ciara\\Sprint\\Personne' => __DIR__ . '/../..' . '/src/entity/Personne.php',
-        'Ciara\\Sprint\\Transaction' => __DIR__ . '/../..' . '/src/entity/Transaction.php',
-        'Ciara\\Sprint\\TypeCompte' => __DIR__ . '/../..' . '/src/entity/TypeCompte.php',
-        'Ciara\\Sprint\\TypePersonne' => __DIR__ . '/../..' . '/src/entity/TypePersonne.php',
-        'Ciara\\Sprint\\TypeTransaction' => __DIR__ . '/../..' . '/src/entity/TypeTransaction.php',
+        'App\\Controller\\CompteController' => __DIR__ . '/../..' . '/src/controller/CompteController.php',
+        'App\\Controller\\SecurityController' => __DIR__ . '/../..' . '/src/controller/SecurityController.php',
+        'App\\Core\\abstract\\AbstractController' => __DIR__ . '/../..' . '/app/core/abstract/AbstractController.php',
+        'App\\Core\\abstract\\AbstractEntity' => __DIR__ . '/../..' . '/app/core/abstract/AbstractEntity.php',
+        'App\\Core\\abstract\\AbstractRepository' => __DIR__ . '/../..' . '/app/core/abstract/AbstractRepository.php',
+        'App\\Core\\abstract\\Route' => __DIR__ . '/../..' . '/app/core/abstract/Route.php',
+        'App\\Core\\abstract\\Session' => __DIR__ . '/../..' . '/app/core/abstract/Session.php',
+        'App\\Core\\abstract\\Validator' => __DIR__ . '/../..' . '/app/core/abstract/Validator.php',
+        'App\\Core\\middlewares\\Auth' => __DIR__ . '/../..' . '/app/core/middlewares/Auth.php',
+        'App\\Entity\\Client' => __DIR__ . '/../..' . '/src/entity/Client.php',
+        'App\\Entity\\Compte' => __DIR__ . '/../..' . '/src/entity/Compte.php',
+        'App\\Entity\\Personne' => __DIR__ . '/../..' . '/src/entity/Personne.php',
+        'App\\Entity\\Transaction' => __DIR__ . '/../..' . '/src/entity/Transaction.php',
+        'App\\Entity\\TypeCompte' => __DIR__ . '/../..' . '/src/entity/TypeCompte.php',
+        'App\\Entity\\TypePersonne' => __DIR__ . '/../..' . '/src/entity/TypePersonne.php',
+        'App\\Entity\\TypeTransaction' => __DIR__ . '/../..' . '/src/entity/TypeTransaction.php',
+        'App\\Entity\\User' => __DIR__ . '/../..' . '/src/entity/User.php',
+        'App\\Repository\\CompteRepository' => __DIR__ . '/../..' . '/src/repository/CompteRepository.php',
+        'App\\Repository\\TransactionRepository' => __DIR__ . '/../..' . '/src/repository/TransactionRepository.php',
+        'App\\Repository\\UserRepository' => __DIR__ . '/../..' . '/src/repository/UserRepository.php',
+        'App\\Service\\CompteService' => __DIR__ . '/../..' . '/src/service/CompteService.php',
+        'App\\Service\\ImageUploadService' => __DIR__ . '/../..' . '/src/service/ImageUploadService.php',
+        'App\\Service\\TransactionService' => __DIR__ . '/../..' . '/src/service/TransactionService.php',
+        'App\\Service\\UserService' => __DIR__ . '/../..' . '/src/service/UserService.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Database\\Database' => __DIR__ . '/../..' . '/app/config/database/Database.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

@@ -4,7 +4,7 @@ namespace App\Repository;
 use App\Entity\Compte;
 use App\Entity\Client;
 use App\Entity\TypeCompte;
-use App\Core\AbstractRepository;
+use App\Core\abstract\AbstractRepository;
 
 class CompteRepository extends AbstractRepository {
     

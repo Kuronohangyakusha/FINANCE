@@ -6,8 +6,12 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Ciara\\Sprint\\' => array($baseDir . '/src/entity'),
-    'Ciara4\\' => array($baseDir . '/public'),
-    'Ciara3\\Sprint3\\' => array($baseDir . '/src/controller'),
-    'Ciara2\\Sprint2\\' => array($baseDir . '/core/abstract'),
+    'Database\\' => array($baseDir . '/app/config/database'),
+    'App\\Service\\' => array($baseDir . '/src/service'),
+    'App\\Repository\\' => array($baseDir . '/src/repository'),
+    'App\\Entity\\' => array($baseDir . '/src/entity'),
+    'App\\Core\\Middlewares\\' => array($baseDir . '/app/core/middlewares'),
+    'App\\Core\\Abstract\\' => array($baseDir . '/app/core/abstract'),
+    'App\\Core\\' => array($baseDir . '/app/core'),
+    'App\\Controller\\' => array($baseDir . '/src/controller'),
 );

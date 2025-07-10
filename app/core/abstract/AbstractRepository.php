@@ -1,5 +1,6 @@
 <?php
-namespace App\Core;
+namespace App\Core\abstract;
+
 
 use Database\Database;
 use PDO;

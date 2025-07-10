@@ -6,7 +6,7 @@ use App\Repository\UserRepository;
 use App\Entity\Compte;
 use App\Entity\Client;
 use App\Entity\TypeCompte;
-use App\Core\Validator;
+use App\Core\abstract\Validator;
 
 class CompteService {
     private CompteRepository $compteRepository;

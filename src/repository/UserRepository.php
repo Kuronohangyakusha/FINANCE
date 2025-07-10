@@ -2,7 +2,7 @@
 namespace App\Repository;
 
 use App\Entity\User;
-use App\Core\AbstractRepository;
+use App\Core\abstract\AbstractRepository;
 
 class UserRepository extends AbstractRepository {
     

@@ -1,24 +1,21 @@
 <?php
 namespace App\Controller;
- 
- 
 
-use App\Core\AbstractController;
-use App\Core\Validator;
+use App\Core\abstract\AbstractController;
+use App\Core\abstract\Validator;
 use App\Core\Middlewares\Auth;
 use App\Service\UserService;
 use App\Entity\User;
- 
 
-class SecurityController extends  AbstractController{
+class SecurityController extends AbstractController {
     private UserService $userService;
     
     public function __construct() {
         $this->userService = new UserService();
     }
     
-    public function create(){
-        $this->Layout='LayoutConnexion.html.php';
+    public function create() {
+        $this->Layout = 'LayoutConnexion.html.php';
         $this->render('Security/register.php');
     }
     
@@ -57,31 +54,10 @@ class SecurityController extends  AbstractController{
         Auth::logout();
         redirect('/login');
     }
-    
+
     // Méthodes abstraites requises
     public function index() {}
     public function edit() {}
     public function show() {}
     public function delete() {}
-}
-
-            return;
-        }
-        
-        Auth::login($user->toArray());
-        redirect('/dashboard');
-    }
-    
-    public function logout() {
-        Auth::logout();
-        redirect('/login');
-    }
-    
-    // Méthodes abstraites requises
-    public function index() {}
-    public function edit() {}
-    public function show() {}
-    public function delete() {}
-  
-
 }

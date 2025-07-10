@@ -1,8 +1,8 @@
 <?php
 namespace App\Controller;
 
-use App\Core\AbstractController;
-use App\Core\Middlewares\Auth;
+use App\Core\abstract\AbstractController;
+use App\Core\abstract\Middlewares\Auth;
 use App\Service\CompteService;
 
 class CompteController extends AbstractController {

@@ -3,7 +3,7 @@ namespace App\Service;
 
 use App\Repository\UserRepository;
 use App\Entity\User;
-use App\Core\Validator;
+use App\Core\abstract\Validator;
 
 class UserService {
     private UserRepository $userRepository;

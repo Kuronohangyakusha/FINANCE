@@ -1,5 +1,5 @@
 <?php
-namespace App\Core;
+namespace App\Core\abstract;
 
 abstract class AbstractController{
     protected $Layout = 'base.layout.php';

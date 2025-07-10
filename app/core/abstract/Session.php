@@ -1,5 +1,6 @@
 <?php
-namespace App\Core;
+namespace App\Core\abstract;
+ 
 
 class Session {
     private static ?Session $instance = null; 
