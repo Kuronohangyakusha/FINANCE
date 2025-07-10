@@ -6,5 +6,8 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Ciara\\Sprint\\' => array($baseDir . '/src'),
+    'Ciara\\Sprint\\' => array($baseDir . '/src/entity'),
+    'Ciara4\\' => array($baseDir . '/public'),
+    'Ciara3\\Sprint3\\' => array($baseDir . '/src/controller'),
+    'Ciara2\\Sprint2\\' => array($baseDir . '/core/abstract'),
 );

@@ -6,5 +6,14 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Ciara3\\Sprint3\\CompteController' => $baseDir . '/src/controller/CompteController.php',
+    'Ciara3\\Sprint3\\SecurityController' => $baseDir . '/src/controller/SecurityController.php',
+    'Ciara\\Sprint\\Client' => $baseDir . '/src/entity/Client.php',
+    'Ciara\\Sprint\\Compte' => $baseDir . '/src/entity/Compte.php',
+    'Ciara\\Sprint\\Personne' => $baseDir . '/src/entity/Personne.php',
+    'Ciara\\Sprint\\Transaction' => $baseDir . '/src/entity/Transaction.php',
+    'Ciara\\Sprint\\TypeCompte' => $baseDir . '/src/entity/TypeCompte.php',
+    'Ciara\\Sprint\\TypePersonne' => $baseDir . '/src/entity/TypePersonne.php',
+    'Ciara\\Sprint\\TypeTransaction' => $baseDir . '/src/entity/TypeTransaction.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
 );

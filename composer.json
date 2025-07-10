@@ -3,7 +3,13 @@
     "description": "projet de gestion financier",
     "autoload": {
         "psr-4": {
-            "Ciara\\Sprint\\": "src/"
+            "Ciara\\Sprint\\": "src/entity",
+            "Ciara2\\Sprint2\\": "core/abstract/",
+        "Ciara3\\Sprint3\\": "src/controller/",    
+        "Ciara4\\": "public/"
+          
+
+
         }
     },
     "authors": [
