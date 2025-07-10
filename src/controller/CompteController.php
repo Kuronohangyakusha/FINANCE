@@ -3,15 +3,13 @@ namespace App\Controller;
 
 use App\Core\AbstractController;
 use App\Core\Middlewares\Auth;
-use App\Core\Validator;
-use App\Repository\CompteRepository;
-use App\Entity\Compte;
+use App\Service\CompteService;
 
 class CompteController extends AbstractController {
-    private CompteRepository $compteRepository;
+    private CompteService $compteService;
     
     public function __construct() {
-        $this->compteRepository = new CompteRepository();
+        $this->compteService = new CompteService();
     }
     
     public function index() {
@@ -22,7 +20,7 @@ class CompteController extends AbstractController {
         }
         
         $user = Auth::user();
-        $comptes = $this->compteRepository->findByUserId($user['id']);
+        $comptes = $this->compteService->getUserComptes($user['id']);
         $this->render('compte/list.php', ['user' => $user, 'comptes' => $comptes]);
     }
     
@@ -49,37 +47,14 @@ class CompteController extends AbstractController {
             return;
         }
         
-        $data = $_POST;
         $user = Auth::user();
         
-        // Validation des données
-        $rules = [
-            'type_compte' => 'required',
-            'montant_initial' => 'required'
-        ];
+        $result = $this->compteService->createCompte($_POST, $user['id']);
         
-        if (!Validator::validate($data, $rules)) {
-            $this->redirectWithErrors('/compte/create', Validator::getErrors(), $data);
-            return;
-        }
-        
-        // Créer le compte
-        $compte = new Compte(
-            0,
-            $user['numero_tel'],
-            $user['photo_recto'] ?? '',
-            $user['photo_verso'] ?? '',
-            '', // password sera géré séparément
-            $user['numero_cni'],
-            (int)$data['montant_initial'],
-            \App\Entity\TypeCompte::from($data['type_compte']),
-            new \App\Entity\Client($user['id'], $user['nom'], $user['prenom'], $user['adresse'], $user['numero_tel'])
-        );
-        
-        if ($this->compteRepository->create($compte)) {
-            $this->redirectWithSuccess('/dashboard', 'Compte créé avec succès.');
+        if ($result['success']) {
+            $this->redirectWithSuccess('/dashboard', $result['message']);
         } else {
-            $this->redirectWithErrors('/compte/create', ['general' => 'Erreur lors de la création du compte'], $data);
+            $this->redirectWithErrors('/compte/create', $result['errors'], $_POST);
         }
     }
 }
