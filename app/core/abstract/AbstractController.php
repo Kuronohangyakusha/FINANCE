@@ -1,8 +1,6 @@
 <?php
 namespace App\Core;
 
-use App\Core\Session;
-
 abstract class AbstractController{
     protected $Layout = 'base.layout.php';
     

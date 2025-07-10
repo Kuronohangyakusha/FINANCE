@@ -8,7 +8,7 @@ class ImageUploadService {
     private array $allowedExtensions;
     
     public function __construct() {
-        $this->uploadPath = $_ENV['UPLOAD_PATH'] ?? __DIR__ . '/../../public/images/';
+        $this->uploadPath = $_ENV['UPLOAD_PATH'] ?? __DIR__ . '/../../public/uploads/images/';
         $this->maxFileSize = $_ENV['MAX_FILE_SIZE'] ?? 2097152; // 2MB
         $this->allowedTypes = ['image/jpeg', 'image/png', 'image/jpg'];
         $this->allowedExtensions = ['jpg', 'jpeg', 'png'];
@@ -114,7 +114,7 @@ class ImageUploadService {
      * @return string
      */
     public function getImageUrl(string $fileName): string {
-        return '/images/' . $fileName;
+        return '/uploads/images/' . $fileName;
     }
     
     /**

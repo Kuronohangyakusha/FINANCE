@@ -1,7 +1,8 @@
 <?php
-namespace Ciara\Sprint;
-use Ciara\Sprint\Transaction;
-use Ciara2\Sprint2\AbstractEntity;
+namespace App\Entity;
+
+use App\Core\AbstractEntity;
+
 class Compte extends AbstractEntity  {
     private int $idCompte;
     private string $numeroTel;

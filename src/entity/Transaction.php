@@ -1,8 +1,9 @@
 <?php
-namespace Ciara\Sprint;
+namespace App\Entity;
 
 use DateTime;
-use Ciara2\Sprint2\AbstractEntity;
+use App\Core\AbstractEntity;
+
 class Transaction extends AbstractEntity {
     private int $id_transaction;
     private int $montantTransaction;

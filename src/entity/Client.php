@@ -1,7 +1,8 @@
 <?php
-namespace Ciara\Sprint;
-use Ciara\Sprint\Compte;
-use Ciara2\Sprint2\AbstractEntity;
+namespace App\Entity;
+
+use App\Core\AbstractEntity;
+
 class Client extends AbstractEntity  {
     private string $numero;
     private array $compte = [];

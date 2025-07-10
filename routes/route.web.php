@@ -9,7 +9,9 @@ use App\Controller\CompteController;
         'create' => ['controller' => SecurityController::class, 'action' => 'create'],
         'register' => ['controller' => SecurityController::class, 'action' => 'store'],
         'dashboard' => ['controller' => CompteController::class, 'action' => 'create', 'middleware' => 'auth'],
-        'liste' => ['controller' => CompteController::class, 'action' => 'store', 'middleware' => 'auth'],
+        'compte/create' => ['controller' => CompteController::class, 'action' => 'create', 'middleware' => 'auth'],
+        'compte/store' => ['controller' => CompteController::class, 'action' => 'store', 'middleware' => 'auth'],
+        'compte/list' => ['controller' => CompteController::class, 'action' => 'index', 'middleware' => 'auth'],
         'logout' => ['controller' => SecurityController::class, 'action' => 'logout'],
     ];
 

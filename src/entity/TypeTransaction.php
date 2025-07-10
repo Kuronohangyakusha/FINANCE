@@ -1,5 +1,5 @@
 <?php
-namespace Ciara\Sprint;
+namespace App\Entity;
 
 enum TypeTransaction: string {
     case DEPOT = 'depot';

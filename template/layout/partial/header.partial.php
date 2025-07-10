@@ -35,9 +35,9 @@
         <button class="w-full bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 md:py-3 px-4 rounded-lg transition-colors text-left text-sm md:text-base">
             Transaction
         </button>
-        <button class="w-full bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 md:py-3 px-4 rounded-lg transition-colors text-left text-sm md:text-base">
+        <a href="/compte/list" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 md:py-3 px-4 rounded-lg transition-colors text-left text-sm md:text-base block">
             Liste compte
-        </button>
+        </a>
         <a href="/logout" class="w-full bg-red-500 hover:bg-red-600 text-white font-medium py-2 md:py-3 px-4 rounded-lg transition-colors text-left text-sm md:text-base block">
             Déconnexion
         </a>

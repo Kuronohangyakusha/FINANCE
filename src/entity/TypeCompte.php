@@ -1,7 +1,5 @@
 <?php 
-namespace Ciara\Sprint;
-
- 
+namespace App\Entity;
 
 enum TypeCompte: string {
     case PRINCIPAL = 'principal';

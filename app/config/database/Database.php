@@ -1,5 +1,5 @@
 <?php 
- 
+namespace Database;
 
 class Database {
     private static ?Database $instance = null;

@@ -3,11 +3,12 @@
     "description": "projet de gestion financier",
     "autoload": {
         "psr-4": {
-            "App\\Entity\\": "src/entity/",
             "App\\Core\\": "app/core/",
             "App\\Controller\\": "src/controller/",
+            "App\\Entity\\": "src/entity/",
             "App\\Repository\\": "src/repository/",
-            "App\\Service\\": "src/service/"
+            "App\\Service\\": "src/service/",
+            "Database\\": "app/config/database/"
         }
     },
     "authors": [

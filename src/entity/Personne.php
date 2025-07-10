@@ -1,6 +1,5 @@
 <?php
-namespace Ciara\Sprint;
- 
+namespace App\Entity;
 
 class Personne {
     private int $id;

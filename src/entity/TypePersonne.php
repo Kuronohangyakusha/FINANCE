@@ -1,7 +1,5 @@
 <?php 
-namespace Ciara\Sprint;
-
- 
+namespace App\Entity;
 
 enum TypePersonne: string {
     case CLIENT = 'client';

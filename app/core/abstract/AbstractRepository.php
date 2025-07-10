@@ -1,7 +1,7 @@
 <?php
 namespace App\Core;
 
-use Database;
+use Database\Database;
 use PDO;
 
 abstract class AbstractRepository {
