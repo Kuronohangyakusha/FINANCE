@@ -1,47 +1,43 @@
 <?php
 namespace App\Core;
- 
- 
- 
 
-
-class Session{
+class Session {
     private static ?Session $instance = null; 
 
-    private function __construct(){
-        if(session_status()===PHP_SESSION_NONE){
+    private function __construct() {
+        if (session_status() === PHP_SESSION_NONE) {
             session_start();
         }
     }
 
-     public static function getInstance():Session{
-        if(self::$instance===null){
+    public static function getInstance(): Session {
+        if (self::$instance === null) {
             self::$instance = new Session();
         }
         return self::$instance;
-
     }
 
-    public static function set($key, $data){
+    public static function set($key, $data) {
         $_SESSION[$key] = $data;
-
     }
 
-    public static function get($key){
-        return $_SESSION[$key]?? null;
-
+    public static function get($key) {
+        return $_SESSION[$key] ?? null;
     }
 
-    public static function unset($key){
+    public static function unset($key) {
         unset($_SESSION[$key]);
     }
 
-    public static function isset($key){
+    public static function isset($key) {
         return isset($_SESSION[$key]);
-
     }
 
-    public static function destroy(){
+    public static function destroy() {
+        session_unset();
+        session_destroy();
+        self::$instance = null;
+    }
     
     public static function setUser($user) {
         $_SESSION['user'] = $user;
@@ -58,12 +54,4 @@ class Session{
     public static function logout() {
         unset($_SESSION['user']);
     }
-        session_unset();
-        session_destroy();
-        self::$instance = null;
-
-    }
-
-   
-    
 }

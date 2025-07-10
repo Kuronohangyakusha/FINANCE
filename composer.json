@@ -8,9 +8,6 @@
             "App\\Controller\\": "src/controller/",
             "App\\Repository\\": "src/repository/",
             "App\\Service\\": "src/service/"
-          
-
-
         }
     },
     "authors": [

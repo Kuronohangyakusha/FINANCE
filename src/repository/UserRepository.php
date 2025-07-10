@@ -2,15 +2,9 @@
 namespace App\Repository;
 
 use App\Entity\User;
-use Database;
-use PDO;
+use App\Core\AbstractRepository;
 
-class UserRepository {
-    private PDO $pdo;
-    
-    public function __construct() {
-        $this->pdo = Database::getConnection();
-    }
+class UserRepository extends AbstractRepository {
     
     public function findByPhone(string $phone): ?User {
         $stmt = $this->pdo->prepare("SELECT * FROM users WHERE numero_tel = ?");
@@ -24,7 +18,7 @@ class UserRepository {
         return null;
     }
     
-    public function create(User $user): bool {
+    public function create($user): bool {
         $sql = "INSERT INTO users (nom, prenom, adresse, numero_tel, numero_cni, password, photo_recto, photo_verso, created_at) 
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, NOW())";
         
@@ -51,6 +45,38 @@ class UserRepository {
         }
         
         return null;
+    }
+    
+    public function update($user): bool {
+        $sql = "UPDATE users SET nom = ?, prenom = ?, adresse = ?, numero_tel = ?, numero_cni = ?, photo_recto = ?, photo_verso = ? WHERE id = ?";
+        
+        $stmt = $this->pdo->prepare($sql);
+        return $stmt->execute([
+            $user->getNom(),
+            $user->getPrenom(),
+            $user->getAdresse(),
+            $user->getNumeroTel(),
+            $user->getNumeroCni(),
+            $user->getPhotoRecto(),
+            $user->getPhotoVerso(),
+            $user->getId()
+        ]);
+    }
+    
+    public function delete(int $id): bool {
+        $stmt = $this->pdo->prepare("DELETE FROM users WHERE id = ?");
+        return $stmt->execute([$id]);
+    }
+    
+    public function findAll(): array {
+        $stmt = $this->pdo->query("SELECT * FROM users ORDER BY created_at DESC");
+        $users = [];
+        
+        while ($data = $stmt->fetch()) {
+            $users[] = User::fromArray($data);
+        }
+        
+        return $users;
     }
     
     public function phoneExists(string $phone): bool {
